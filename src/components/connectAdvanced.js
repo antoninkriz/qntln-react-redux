@@ -192,6 +192,9 @@ export default function connectAdvanced(
     // REMOVED: expose the wrapped component via refs
     withRef = false,
 
+    // name of the function used for listener subscription
+    subscribe = 'subscribe',
+
     // use React's forwardRef to expose a ref of the wrapped component
     forwardRef = false,
 
@@ -336,7 +339,10 @@ export default function connectAdvanced(
         // connected to the store via props shouldn't use subscription from context, or vice versa.
         const subscription = new Subscription(
           store,
-          didStoreComeFromProps ? null : contextValue.subscription
+          didStoreComeFromProps ? null : contextValue.subscription,
+          props,
+          connectOptions,
+          subscribe
         )
 
         // `notifyNestedSubs` is duplicated to handle the case where the component is unmounted in
