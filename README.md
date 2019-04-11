@@ -1,6 +1,10 @@
 # React Redux
 
-Official React bindings for [Redux](https://github.com/reduxjs/redux).  
+## Purpose of this fork
+
+This is a fork of react-redux which enables the user to pass the name of a subscription function used instead of the original store.subscribe function. Other extra parameters are passed as args to this function - this enables us to call only a subset of the original listeners.
+
+Official React bindings for [Redux](https://github.com/reduxjs/redux).
 Performant and flexible.
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/reduxjs/react-redux/CI?style=flat-square) [![npm version](https://img.shields.io/npm/v/react-redux.svg?style=flat-square)](https://www.npmjs.com/package/react-redux)
